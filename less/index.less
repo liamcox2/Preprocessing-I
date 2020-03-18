@@ -4,48 +4,129 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
@@ -53,7 +134,145 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+// Variables
+
+@background-color = dimgrey
+@text-color = white
+
+// Mixins
+
+.flexColumn(){
+	display:flex;
+	flex-direction: column;
 }
 
+// Media
+
+@mobile = @media "(max-width:500px)";
+
+// Main less
+
+html {
+    font-size: 62.5%;
+}
+body {
+    height: 100%;
+    font-size: 1.6rem;
+    margin: 1%;
+}
+
+h2 {
+    border: grey 1px solid;
+    width: 25%;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-left: 10%;
+    padding: 5%;
+}
+
+h3 {
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: 2rem;
+}
+
+li {
+    list-style-type: circle;
+    margin-left: 3%;
+}
+
+.container {
+    ul {
+        margin-left: 15%;
+    }
+}
+
+header {
+    height: 25vh;
+    background-color: @background-color;
+    flexColumn();
+    align-items: center;
+    h1 {
+        font-size: 9rem;
+        text-align: center;
+        color: @text-color;
+        margin-bottom: 3%;
+    }
+    p {
+        font-size: 1.6rem;
+        color: @text-color;
+    }
+    .contact {
+        display: flex;
+        .contact p {
+            width: 100%;
+        }
+    }
+}
+.pro-summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+    div {
+        width: 50%;
+    }
+}
+
+.pro-h2 {
+    margin-left: 20%;
+    padding: 5%;
+    width: 50%;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+    div {
+        width: 50%;
+    }
+}
+
+.skills-h2 {
+    margin-left: 20%;
+    padding: 5%;
+    width: 50%;
+}
+
+.work-history {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+    div {
+        width: 50%;
+    }
+}
+
+.wh-h2 {
+    margin-left: 20%;
+    padding: 5%;
+    width: 50%;
+}
+
+.education {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+    div {
+        width: 50%;
+    }
+}
+
+.ed-h2 {
+    margin-left: 20%;
+    padding: 5%;
+    width: 50%;
+}
